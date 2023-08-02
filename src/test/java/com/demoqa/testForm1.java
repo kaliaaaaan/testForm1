@@ -3,6 +3,7 @@ package com.demoqa;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -20,6 +21,9 @@ public class testForm1 {
     @Test
     void fillRegistrationFormTest() {
         open("/automation-practice-form");
+
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
 
         $("#firstName").setValue("Nikolay");
         $("#lastName").setValue("Pronyushkin");
@@ -40,6 +44,7 @@ public class testForm1 {
         $("#city").click();
         $("#stateCity-wrapper").$(byText("Jaiselmer")).click();
         $("#submit").click();
+
 
         $(".table-responsive").shouldHave(text("Nikolay Pronyushkin"));
         $(".table-responsive").shouldHave(text("knnn@ya.ru"));
