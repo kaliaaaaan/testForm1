@@ -20,3 +20,12 @@ gradle-app.setting
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+build/
+gradle/wrapper
+/.idea
+/.gradle
+gradlew.bat
+gradlew
+HW6.iml
+out/

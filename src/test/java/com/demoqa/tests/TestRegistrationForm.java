@@ -1,22 +1,12 @@
-package com.demoqa;
+package com.demoqa.tests;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class TestRegistrationForm {
-
-    @BeforeAll
-    static void beforeAll() {
-
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-        Configuration.pageLoadStrategy = "eager";
-    }
+public class TestRegistrationForm extends TestBase {
 
     @Test
     void fillRegistrationFormTest() {
