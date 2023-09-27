@@ -13,6 +13,7 @@ public class TextBoxTests extends TestBase {
 
         textBoxPage
                 .openPage()
+                .deleteBanners()
                 .setUserName("Nikolay")
                 .setUserEmail("knnn@ya.ru")
                 .setCurrentAddress("Russia")
