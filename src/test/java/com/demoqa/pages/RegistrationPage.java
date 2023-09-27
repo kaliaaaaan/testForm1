@@ -6,6 +6,7 @@ import com.demoqa.pages.components.CalendarComponent;
 
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
@@ -30,13 +31,20 @@ public class RegistrationPage {
             city = $("#stateCity-wrapper #city"),
             cityInput = $("#city"),
             submitButton = $("#submit"),
-            tableResponsive = $(".table-responsive");
+            tableResponsive = $(".table-responsive"),
+            studentRegistrationForm = $(".practice-form-wrapper");
+
+
 
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
-        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
 
+        return this;
+    }
+
+    public RegistrationPage checkNamePage(String value){
+        studentRegistrationForm.shouldHave(text(value));
         return this;
     }
 

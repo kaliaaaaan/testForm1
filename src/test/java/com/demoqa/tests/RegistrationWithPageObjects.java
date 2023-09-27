@@ -12,6 +12,7 @@ public class RegistrationWithPageObjects extends TestBase {
        registrationPage
                .openPage()
                .removeBanners()
+               .checkNamePage("Student Registration Form")
                .setFirstName("Nikolay")
                .setLastName("Pronyushkin")
                .setUserEmail("knnn@ya.ru")
