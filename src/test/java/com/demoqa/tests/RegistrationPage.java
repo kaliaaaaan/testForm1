@@ -1,20 +1,28 @@
 package com.demoqa.tests;
 
-import com.demoqa.pages.RegistrationPage;
-
 import com.demoqa.utils.RandomVariables;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-public class RegistrationWithPageObjectsWithFaker extends TestBase {
+import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
-    RegistrationPage registrationPage = new RegistrationPage();
+
+public class RegistrationPage extends TestBaseMain {
+    com.demoqa.pages.RegistrationPage registrationPage = new com.demoqa.pages.RegistrationPage();
     RandomVariables randomVariables = new RandomVariables();
 
+    @Tag("main")
     @Test
-    void succesfullfillRegistrationFormTest() {
-       registrationPage
-               .openPage()
-               .removeBanners()
+    void  succesfullfillRegistrationFormTest () {
+        step("Open page", () -> {
+            registrationPage
+                    .openPage()
+                    .removeBanners();
+        });
+
+
+        step("Fill form", () -> {
+            registrationPage
                .setFirstName(randomVariables.firstName)
                .setLastName(randomVariables.lastName)
                .setUserEmail(randomVariables.userEmail)
@@ -28,7 +36,10 @@ public class RegistrationWithPageObjectsWithFaker extends TestBase {
                .setState(randomVariables.state)
                .setCity(randomVariables.city)
                .submitButtonClick();
+        });
 
+
+        step("Check results", () -> {
         registrationPage
                 .checkResult(randomVariables.firstName + " " + randomVariables.lastName)
                 .checkResult(randomVariables.userEmail)
@@ -40,5 +51,6 @@ public class RegistrationWithPageObjectsWithFaker extends TestBase {
                 .checkResult(randomVariables.fileName)
                 .checkResult(randomVariables.mainAddress)
                 .checkResult(randomVariables.state + " " + randomVariables.city);
+        });
     }
 }

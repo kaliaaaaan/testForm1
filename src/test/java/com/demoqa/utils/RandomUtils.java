@@ -5,23 +5,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomUtils {
 
-    public static String
-            firstName = getRandomFirstName(),
-            lastName = getRandomLastName(),
-            userEmail = getRandomUserEmail(),
-            userGender = getRandomGender(),
-            userNumber = getRandomUserNumber(),
-            birthdayYear = getRandomYear(),
-            birthdayMonth = getRandomMonth(),
-            birthDay = getRandomDay(),
-            hobby = getRandomHobby(),
-            subject = getRandomSubject(),
-            fileName = "image.png",
-            mainAddress = getRandomAddress(),
-            state = getRandomState(),
-            city = getRandomCity(state);
-
-
     public static int getRandomInt(int min, int max) {
 
         return ThreadLocalRandom.current().nextInt(min, max + 1);
@@ -55,7 +38,7 @@ public class RandomUtils {
 
     public static String getRandomYear() {
 
-        return new Faker().random().nextInt(1950, 2005).toString();
+        return new Faker().random().nextInt(1960, 2005).toString();
     }
 
     public static String getRandomMonth() {
