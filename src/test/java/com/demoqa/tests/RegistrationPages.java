@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
 
-public class RegistrationPage extends TestBaseMain {
+public class RegistrationPages extends TestBaseMain {
     com.demoqa.pages.RegistrationPage registrationPage = new com.demoqa.pages.RegistrationPage();
     RandomVariables randomVariables = new RandomVariables();
 
