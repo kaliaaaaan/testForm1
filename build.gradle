@@ -55,3 +55,9 @@ task simple_test(type: Test) {
         includeTags("main")
     }
 }
+
+task property_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("property")
+    }
+}
