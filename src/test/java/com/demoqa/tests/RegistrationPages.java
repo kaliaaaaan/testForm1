@@ -1,6 +1,7 @@
 package com.demoqa.tests;
 
 import com.demoqa.utils.RandomVariables;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -11,6 +12,7 @@ public class RegistrationPages extends TestBaseMain {
     com.demoqa.pages.RegistrationPage registrationPage = new com.demoqa.pages.RegistrationPage();
     RandomVariables randomVariables = new RandomVariables();
 
+    @DisplayName("Test Registration Form,")
     @Tag("main")
     @Test
     void  succesfullfillRegistrationFormTest () {
