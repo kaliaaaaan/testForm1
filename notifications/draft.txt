@@ -1,7 +1,0 @@
-6844767079:AAE-dxmr0wYm2Nvba17CeJ54uzJsy5sNuvQ
-
-autotest_allert_1337_bot
-
--4076283352
-
-java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.5.0.jar

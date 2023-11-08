@@ -29,3 +29,6 @@ gradlew.bat
 gradlew
 HW6.iml
 out/
+
+notifications/config.json
+notifications/draft.txt
